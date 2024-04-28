@@ -8,6 +8,6 @@ reprositories {
 
 dependencies {
     testImplementation(
-            "com.codeborne:selenide:7.2.3"
+            "com.codeborne:selenide:7.2.2"
     )
 }
