@@ -17,7 +17,7 @@ public class SimpleJUnitTest {
 
   @AfterEach
   void afterEach(){
-      System.out.println("###    afterEach()");
+      System.out.println("###    afterEach()\n");
   }
 
   @AfterAll
