@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+}
+
+reprositories {
+    mavenCemtral()
+}
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:7.2.3"
+    )
+}
