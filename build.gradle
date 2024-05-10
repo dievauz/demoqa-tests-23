@@ -2,14 +2,14 @@ plugins {
     id 'java-library'
 }
 
-reprositories {
-    mavenCemtral()
+repositories {
+    mavenCentral()
 }
 
 dependencies {
     testImplementation(
-            "org.junit.jupiter:junit-jupiter:5.10.0",
             "com.codeborne:selenide:6.19.1",
+            "org.junit.jupiter:junit-jupiter:5.10.0",
             'org.slf4j:slf4j-simple:2.0.7'
     )
 }
