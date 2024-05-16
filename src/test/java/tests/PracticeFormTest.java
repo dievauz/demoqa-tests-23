@@ -29,7 +29,7 @@ public class PracticeFormTest {
         $("#subjectsInput").setValue("Economics").pressEnter();
         $("label[for=hobbies-checkbox-1]").click();
         $("label[for=hobbies-checkbox-2]").click();
-        $("#uploadPicture").uploadFromClasspath("");
+        $("#uploadPicture").uploadFromClasspath("picture.png");
         $("#currentAddress").setValue("Winter fell");
         $("#react-select-2-input").setValue("Uttar Pradesh").pressEnter();
         $("#react-select-1-input").setValue("Agra").pressEnter();
