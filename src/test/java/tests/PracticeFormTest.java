@@ -4,8 +4,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest {
     @BeforeAll
@@ -13,11 +13,13 @@ public class PracticeFormTest {
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.holdBrowserOpen = true;
+
     }
     @Test
     void practiceFormTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
         $("#firstName").setValue("John");
         $("#lastName").setValue("Snow");
         $("#userEmail").setValue("john8snow@mail.ru");
@@ -31,8 +33,10 @@ public class PracticeFormTest {
         $("label[for=hobbies-checkbox-2]").click();
         $("#uploadPicture").uploadFromClasspath("picture.png");
         $("#currentAddress").setValue("Winter fell");
-        $("#react-select-2-input").setValue("Uttar Pradesh").pressEnter();
-        $("#react-select-1-input").setValue("Agra").pressEnter();
+        $("#state").click();
+        $(byText("NCR")).click();
+        $("#city").click();
+        $(byText("Delhi")).click();
         $("#submit").click();
 
         $(".table-responsive").shouldHave(text("John Snow"));
@@ -44,7 +48,7 @@ public class PracticeFormTest {
         $(".table-responsive").shouldHave(text("Sports, Reading"));
         $(".table-responsive").shouldHave(text("picture.png"));
         $(".table-responsive").shouldHave(text("Winter fell"));
-        $(".table-responsive").shouldHave(text("Uttar Pradesh Agra"));
+        $(".table-responsive").shouldHave(text("NCR Delhi"));
 
     }
 }
